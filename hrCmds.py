@@ -14,18 +14,25 @@
 
 
 class hr:
-    def __init__(self, list):
+    def __init__(self, inputList):
         import string
-        self.currentList = list
+        self.currentList = inputList
         self.listLen = len(self.currentList)
         self.counter = 0
         self.ab = list(string.ascii_lowercase) #import alphabet
         self.ab.insert(0,0)
+        self.outputString = ""
     
     def inbox(self):
         if self.counter < self.listLen:
             self.counter += 1
             return self.currentList[self.counter -1]
+        
+    def output(self, var):
+        self.outputString = self.outputString + var
+        
+    def finish(self):
+        return self.outputString
         
     def copyFrom(self, tiles, ni, whatTile):
         if ni == False: #var
